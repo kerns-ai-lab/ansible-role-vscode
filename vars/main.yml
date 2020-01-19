@@ -1,0 +1,18 @@
+#
+# Vars
+#
+# Definitions in this file are expected to remain constant and
+# aren't intended to be overidden in the playbook. If you find
+# yourself needing to override these definitions, consider if
+# the value needs to be changed or if the definitions is better
+# suited for placement in the defaults file. 
+#
+---
+vscode_package: 'code'
+
+vscode_requisite_packages:
+  - apt-transport-https
+
+vscode_gpg_url: 'https://packages.microsoft.com/keys/microsoft.asc'
+vscode_repo_url: 'http://packages.microsoft.com/repos/vscode'
+vscode_repo: 'deb [arch=amd64] {{ vscode_repo_url }} stable main'

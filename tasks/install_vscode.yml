@@ -1,0 +1,34 @@
+#
+# Install vscode and required dependencies
+#
+---
+- name: 'Install pre-requisite dependencies'
+  become: True
+  apt:
+    name: "{{ item }}"
+    update_cache: True
+  loop:
+    - '{{ vscode_requisite_packages }}'
+
+
+- name: 'Add VSCode GPG key to system'
+  become: True
+  apt_key: 
+    url: '{{ vscode_gpg_url }}' 
+    state: present
+
+
+- name: 'Add Visual Studio Code to Apt sources'
+  become: True
+  apt_repository:
+    repo: '{{ vscode_repo }}' 
+    state: present
+    filename: vscode
+    update_cache: True
+
+
+- name: 'Install Visual Studio Code'
+  become: True
+  apt: 
+    name: '{{ vscode_package }}'
+    update_cache: True

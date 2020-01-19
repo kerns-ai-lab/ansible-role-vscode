@@ -1,0 +1,9 @@
+#
+# Defaults
+#
+# These variables are those that are suited to be overridden in
+# the playbooks. The initial values are considered strong defaults
+# for regular usage. Definitions that are expected to remain constant 
+# under most circumstances should instead be placed in the vars file.
+#
+---

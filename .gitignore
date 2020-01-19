@@ -1,0 +1,6 @@
+# Ignore vagrant working directory & logs
+.vagrant/
+*.log
+
+# Ignore Retries
+**/*.retry
